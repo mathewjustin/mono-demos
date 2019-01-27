@@ -4,7 +4,6 @@ package com.mono.cassandra.person.repo;
 import com.mono.model.PersonalInfo;
 import org.springframework.data.cassandra.repository.ReactiveCassandraRepository;
 import reactor.core.publisher.Flux;
-import reactor.core.publisher.Mono;
 
 import java.util.UUID;
 
