@@ -4,10 +4,8 @@ import com.mono.cassandra.person.repo.PersonalInfoRepo;
 import com.mono.model.PersonalInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import reactor.core.Disposable;
 import reactor.core.publisher.Mono;
 
-import java.util.Optional;
 import java.util.UUID;
 
 @Service

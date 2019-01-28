@@ -5,3 +5,5 @@ spring:
       keyspace-name: springmono
       contact-points: localhost
 
+
+

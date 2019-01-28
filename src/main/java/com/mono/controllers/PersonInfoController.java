@@ -36,6 +36,7 @@ public class PersonInfoController {
     @GetMapping("/person/email/{uuid}")
     Mono<PersonalInfo>getEmail(@PathVariable UUID uuid)
     {
+        log.info("Looking for {}",uuid);
         return personService.getEmail(uuid);
     }
 }
