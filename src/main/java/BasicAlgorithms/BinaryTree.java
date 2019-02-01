@@ -38,9 +38,8 @@ public class BinaryTree {
     {
         return preOrder(root,new ArrayList<Integer>());
     }
-
+   final static ArrayList<String>str=new ArrayList<>();
     private static ArrayList<Integer> preOrder(Node root, ArrayList<Integer> preOrderList) {
-
         if(root==null)
         {
             return preOrderList;
