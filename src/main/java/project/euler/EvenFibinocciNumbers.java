@@ -1,9 +1,7 @@
 package project.euler;
 
 
-import java.math.BigDecimal;
 import java.math.BigInteger;
-import java.util.Stack;
 
 public class EvenFibinocciNumbers {
 
