@@ -4,9 +4,9 @@ import org.junit.Test;
 import java.util.concurrent.ArrayBlockingQueue;
 
 
-class customQueue extends ArrayBlockingQueue<Long> {
+class primeNumberSupplierQueue extends ArrayBlockingQueue<Long> {
 
-    public customQueue(int capacity) {
+    public primeNumberSupplierQueue(int capacity) {
         super(capacity);
         start = 0;
         end = 100;
@@ -35,7 +35,7 @@ class customQueue extends ArrayBlockingQueue<Long> {
     private long start;
     private long end;
 
-  /*  public customQueue() {
+  /*  public primeNumberSupplierQueue() {
         start = 0;
         end = 10;
 
@@ -70,7 +70,7 @@ public class LargestPrimeCustom {
     /*https://en.wikipedia.org/wiki/Primality_test*/
 
     int currentPrimeNumber = 1;
-    /*Stack<Long> Primes = new customQueue();*/
+    /*Stack<Long> Primes = new primeNumberSupplierQueue();*/
 
 
     public void LargestPrime() {
@@ -92,7 +92,7 @@ public class LargestPrimeCustom {
    @Test
     public void testIsPrime() {
         long initTime=System.currentTimeMillis();
-         customQueue s=new customQueue(200);
+         primeNumberSupplierQueue s=new primeNumberSupplierQueue(200);
          long number=600851475143L;
        Long poll=0L;
        while (number>1)
