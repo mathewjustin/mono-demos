@@ -1,55 +1,57 @@
 package project.euler;
 
-import org.junit.Test;
-
 public class LargestPalindrome {
 
+    public static void main(String[] args) {
+        long l1 = System.currentTimeMillis();
+        palFromProduct();
+        System.err.println(System.currentTimeMillis()-l1);
+    }
 
-    @Test
-    public void palFromProduct()
+    public static void palFromProduct()
     {
-        Boolean found=false;
-        long max=0l;
-        for (long i=999;i>99;i--)
+        int max=0;
+        int bound=999;
+        short biincre=0;
+        short boundTracker=1;
+        while(bound>99)//inner
         {
-            for (long x=999;x>99;x--)
+            int l=bound*(bound+biincre);
+            if(reverseNumber(l)==l)
             {
-                long l = i * x;
-                if(reverseNumber(l, 0l)==l)
+                if(l>max)
                 {
-                    if(l>max)
-                    {
-                        max=l;
-                    }
+                    max=l;
                 }
-
+                biincre=0;
+                bound=999-boundTracker;
+                boundTracker++;
+                continue;
             }
-
+            bound--;
+            biincre++;
+            if(bound==100)
+            {
+                biincre=0;
+                bound=999-boundTracker;
+                boundTracker++;
+            }
         }
         System.err.println(max);
     }
 
-    @Test
-    public void isPalindromeTest()
-    {
-         long s=100899;
-         long x=998001;
-         if(s==x){
-             System.err.println("Equal");
-         }
 
-    }
 
-    public long reverseNumber(long number, long reversed)
+    public static int reverseNumber(int number)
     {
-        if(number==0)
+        int reversed=0;
+        while (number>0)
         {
-             return reversed;
-        };
+            int l=number%10;
+            reversed=reversed*10+l;
+            number=number/10;
 
-        long l=number%10;
-        reversed=reversed*10+l;
-        number=number/10;
-        return reverseNumber(number,reversed);
+        }
+        return reversed;
     }
 }
