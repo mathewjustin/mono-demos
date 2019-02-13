@@ -6,23 +6,22 @@ public class SmallestEvenlyDivisible
 {
 
     public static void main(String[] args) {
-        System.err.println("Test");
+
+        smallestEvenlyDivisible();
     }
 
-    @Test
-    public void smallestEvenlyDivisible()
+
+    public static void smallestEvenlyDivisible()
     {
 
-        Boolean found=false;
-        long number=10;
-        int counter=0;
+        int number=20;
+        short counter=0;
         long time=System.currentTimeMillis();
-        while(!found) {
+        while(true) {
 
-
-            for (int i = 1; i <= 20; i++)
+            for (double i = 20; i >0; i--)
             {
-                if(number%i==0)
+              if(number%i==0)
                 {
                      counter++;
                 }else{
