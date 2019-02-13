@@ -1,7 +1,5 @@
 package project.euler;
 
-import org.junit.Test;
-
 public class SmallestEvenlyDivisible
 {
 
@@ -19,7 +17,7 @@ public class SmallestEvenlyDivisible
         long time=System.currentTimeMillis();
         while(true) {
 
-            for (double i = 20; i >0; i--)
+            for (short i = 20; i >0; i--)
             {
               if(number%i==0)
                 {
