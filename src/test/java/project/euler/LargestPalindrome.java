@@ -12,27 +12,27 @@ public class LargestPalindrome {
     {
         int max=0;
         int bound=999;
-        short biincre=0;
+        short boundIncrementer=0;
         short boundTracker=1;
         while(bound>99)//inner
         {
-            int l=bound*(bound+biincre);
+            int l=bound*(bound+boundIncrementer);
             if(reverseNumber(l)==l)
             {
                 if(l>max)
                 {
                     max=l;
                 }
-                biincre=0;
+                boundIncrementer=0;
                 bound=999-boundTracker;
                 boundTracker++;
                 continue;
             }
             bound--;
-            biincre++;
+            boundIncrementer++;
             if(bound==100)
             {
-                biincre=0;
+                boundIncrementer=0;
                 bound=999-boundTracker;
                 boundTracker++;
             }
