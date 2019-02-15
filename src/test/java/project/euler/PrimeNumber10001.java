@@ -1,5 +1,6 @@
 package project.euler;
 
+import org.junit.Assert;
 import org.junit.Test;
 
 public class PrimeNumber10001 {
@@ -9,16 +10,50 @@ public class PrimeNumber10001 {
    {
 
        long start=System.currentTimeMillis();
-       primeNumberSupplierQueue s=new primeNumberSupplierQueue(100);
-       int lim=18;
-       Long poll=0l;
-       while(lim>0)
+       int i=1;
+       int primeCounter=0;
+       while(true)
        {
-           poll = s.poll();
-           System.err.println(poll);
-           lim--;
+           if(isPrime(i))
+           {
+                 primeCounter++;
+                 if(primeCounter== 10001)
+                {
+                    System.err.println(i);
+                    break;
+                }
+
+           }
+           i++;
        }
-       System.err.println(poll);
-       System.err.println(System.currentTimeMillis()-start);
+        System.err.println(System.currentTimeMillis()-start);
+   }
+
+   public boolean isPrime(int n)
+   {
+       if(n<=3)
+       {
+           return n>1;
+       }
+       else if(n%2==0||n%3==0)
+       {
+           return false;
+       }
+       int i=5;
+       while ((i*i)<=n)
+        {
+
+            if(n%i==0||n%(i+2)==0)
+                return false;
+           i=i+6;
+        }
+       return true;
+   }
+
+   @Test
+    public void testIsPrime()
+   {
+       Assert.assertTrue( !isPrime(25));
+       Assert.assertTrue( isPrime(104759));
    }
 }
