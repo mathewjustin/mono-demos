@@ -29,7 +29,7 @@ public class PrimeNumber10001 {
         System.err.println(System.currentTimeMillis()-start);
    }
 
-   public boolean isPrime(int n)
+   public static boolean isPrime(int n)
    {
        if(n<=3)
        {
